@@ -28,7 +28,7 @@ function setLight(newHue) {
 }
 
 (async function(){
-    const timeToWait = 10000, gravConversion = 1000;
+    const timeToWait = 900000, gravConversion = 1000;
     const rl = readline.createInterface({
         input: process.stdin,
         output: process.stdout,
