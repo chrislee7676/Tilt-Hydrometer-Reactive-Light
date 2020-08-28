@@ -1,0 +1,23 @@
+{
+  "name": "THL",
+  "version": "1.0.0",
+  "description": "",
+  "main": "thl.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "console-read-write": "^0.1.1",
+    "dotenv": "^8.2.0",
+    "googleapis": "^59.0.0",
+    "moment": "^2.27.0",
+    "node-fetch": "^2.6.0",
+    "package": "^1.0.1",
+    "package.json": "^2.0.1",
+    "philips-hue-api": "^0.1.6",
+    "readline-promise": "^1.0.4"
+  }
+}
