@@ -27,6 +27,22 @@ function setLight(newHue) {
     })
 }
 
+async function mainLogic(startGrav, endGrav, gravConversion, multFact){
+    console.log('\n' + moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
+    let newGrav = await getNewGrav()
+
+    if(newGrav>startGrav)
+        newGrav = startGrav;
+    else if (newGrav<endGrav)
+        newGrav = endGrav;
+
+    const hueDifference = (newGrav - endGrav) * gravConversion * multFact;
+    const newHue = Math.floor(GREEN_HUE - hueDifference);
+
+    setLight(newHue);
+
+}
+
 (async function(){
     const timeToWait = 900000, gravConversion = 1000;
     const rl = readline.createInterface({
@@ -40,19 +56,11 @@ function setLight(newHue) {
     const diff = (startGrav - endGrav)*gravConversion;
     const multFact = GREEN_HUE / diff;
 
+    mainLogic(startGrav, endGrav, gravConversion, multFact)
+
     setInterval(async function(){
-        console.log('\n' + moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
-        let newGrav = await getNewGrav()
 
-        if(newGrav>startGrav)
-            newGrav = startGrav;
-        else if (newGrav<endGrav)
-            newGrav = endGrav;
-
-        const hueDifference = (newGrav - endGrav) * gravConversion * multFact;
-        const newHue = Math.floor(GREEN_HUE - hueDifference);
-
-        setLight(newHue);
+        mainLogic(startGrav, endGrav, gravConversion, multFact)
 
     }, timeToWait)
 })();
