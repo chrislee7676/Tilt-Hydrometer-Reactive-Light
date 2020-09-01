@@ -1,5 +1,5 @@
 # Tilt Hydrometer Reactive Light
-This script allows a Philips Hue lightbulb to change its color depending on the progress of a beer's fermentation using the data supplied by a Tilt Hydrometer.  The script utilizes both the Google Sheets API and the Philips Hue API to pull the latest fermentation data every 15 minutes from the spreadsheet the Tilt Hydrometer updates and, depending on the progress of the fermentation, will smoothly change a Hue color light from red to green using user-defined beginning and ending specific gravity values.
+This script allows a Philips Hue lightbulb to change its color depending on the progress of a beer's fermentation using the data supplied by a Tilt Hydrometer.  The script utilizes both the Google Sheets API and the Philips Hue API to pull the latest fermentation data every 15 minutes from the spreadsheet the Tilt Hydrometer updates and, depending on the progress of the fermentation, will gradually change a Hue color light from red to green using user-defined beginning and ending specific gravity values.
 
 ## What You'll Need
 - Tilt Hydrometer, actively logging
@@ -28,7 +28,7 @@ Place the appropriate value for your setup after `GREEN_HUE=`.
 
 
 ### SPREADSHEET_ID
-The URL you receive when you begin to log your Tilt Hydrometer data should come in the format of `https://docs.google.com/spreadsheets/d/SPREADSHEET_ID_IS_HERE/edit#gid=xxxxxxxxx`.  Copy the string located where `SPREADSHEET_ID_IS_HERE` is and place it after `SPREADSHEET_ID`.
+The URL you receive when you begin to log your Tilt Hydrometer data should come in the format of `https://docs.google.com/spreadsheets/d/SPREADSHEET_ID_IS_HERE/edit#gid=xxxxxxxxx`.  Copy the string located where `SPREADSHEET_ID_IS_HERE` is and place it after `SPREADSHEET_ID=`.
 
 
 ### GOOGLE_API_KEY
