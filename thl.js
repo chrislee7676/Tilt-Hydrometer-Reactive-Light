@@ -38,8 +38,8 @@ async function mainLogic(startGrav, endGrav, gravConversion, multFact){
 
     const hueDifference = (newGrav - endGrav) * gravConversion * multFact;
     const newHue = Math.floor(GREEN_HUE - hueDifference);
-
-    setLight(newHue);
+    if(newHue < 0) setLight(0);
+    else setLight(newHue);
 
 }
 
